@@ -1,0 +1,45 @@
+namespace book
+{
+    internal class book
+    {
+        private int year;
+        public int Year
+        {
+            private get 
+            { 
+                return year; 
+            }
+            set
+            {
+                
+                    if (value < 1940)
+                    {
+                        Console.WriteLine("Такой книги нет в ассортименте");
+                    }
+                    else if (value > 2020)
+                    {
+                        Console.WriteLine("Такая книга ещё не вышла");
+                    }
+                    else year = value;
+              
+                    
+                    
+                
+            }
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            book book1 = new book();
+            do
+            {
+                Console.WriteLine("Введите год выпуска книги :  ");
+                book1.Year = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("\nДля повтора запроса нажмите Enter: \nЧтобы выйти из программы нажмите Escape\n ");
+            } while (Console.ReadKey().Key != ConsoleKey.Escape);
+            
+        }
+    }
+}
